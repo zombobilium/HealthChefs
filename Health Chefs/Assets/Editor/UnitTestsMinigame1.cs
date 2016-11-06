@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SampleTestsNew : MonoBehaviour {
+public class UnitTestsMinigame1 : MonoBehaviour {
 
 	public GameObject picture;
 	public GameObject testContainer;
@@ -107,9 +107,7 @@ public class SampleTestsNew : MonoBehaviour {
 		game.Start();
 		GameObject go = new GameObject ();
 		Button button = go.AddComponent<Button> ();
-		Button button1 = Instantiate (button);
-		Button button2 = Instantiate (button);
-		Button button3 = Instantiate (button);
+
 		for (int i = 0; i < 15; i++) {
 			if ((ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text != "C") 
 				&& (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text != "E")
@@ -128,8 +126,64 @@ public class SampleTestsNew : MonoBehaviour {
 		game.taskOnClick (button, game.solution);
 		game.Update ();
 
-
 		Assert.That (game.wrong.activeSelf == true); 
+	}
+
+	[Test]
+	public void checkWin()
+	{
+		StaticSceneManager.setImage ("cenoura");
+		game.Start();
+		GameObject go = new GameObject ();
+		Button button = go.AddComponent<Button> ();
+		Button button1 = Instantiate (button);
+		Button button2 = Instantiate (button);
+		Button button3 = Instantiate (button);
+		Button button4 = Instantiate (button);
+		Button button5 = Instantiate (button);
+		Button button6 = Instantiate (button);
+		Button button7 = Instantiate (button);
+
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "C")
+				button1 = ButtonList [i];
+		}
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "E")
+				button2 = ButtonList [i];
+		}
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "N")
+				button3 = ButtonList [i];
+		}
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "O")
+				button4 = ButtonList [i];
+		}
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "U")
+				button5 = ButtonList [i];
+		}
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "R")
+				button6 = ButtonList [i];
+		}
+		for (int i = 0; i < 15; i++) {
+			if (ButtonList [i].GetComponent<UnityEngine.UI.Text> ().text == "A")
+				button7 = ButtonList [i];
+		}
+
+		game.taskOnClick (button1, game.solution);
+		game.taskOnClick (button2, game.solution);
+		game.taskOnClick (button3, game.solution);
+		game.taskOnClick (button4, game.solution);
+		game.taskOnClick (button5, game.solution);
+		game.taskOnClick (button6, game.solution);
+		game.taskOnClick (button7, game.solution);
+
+		game.Update ();
+
+		Assert.That (game.check.activeSelf == true); 
 	}
 }
 

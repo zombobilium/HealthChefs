@@ -33,15 +33,15 @@ public class GameController : MonoBehaviour {
 
 	public void Start()
 	{
-		if (!System.IO.File.Exists(Application.persistentDataPath + "/cenas"))
+		if (!System.IO.File.Exists(Application.persistentDataPath + "/data"))
 		{
 			status = new Minigame1Status ();
 		} else 
 		{
-			status = FileManager.ReadFromBinaryFile<Minigame1Status> (Application.persistentDataPath + "/cenas");
+			status = FileManager.ReadFromBinaryFile<Minigame1Status> (Application.persistentDataPath + "/data");
 		}
 		
-		picture.GetComponent<Image> ().sprite = Resources.Load (StaticSceneManager.GetSceneImage(), typeof(Sprite)) as Sprite;
+		picture.GetComponent<Image> ().sprite = Resources.Load ("Minigame 1/" + StaticSceneManager.GetSceneImage(), typeof(Sprite)) as Sprite;
 		solution = picture.GetComponent<Image> ().sprite.name.ToUpper();
 		text.text = " ";
 		setBlanks (solution);

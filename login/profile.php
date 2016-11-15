@@ -17,30 +17,49 @@
   </head>
 
   <body>
-  <!--   Table credits on  http://codepen.io/jordyvanraaij/pen/jlAqp -->
-	<h1>Basic Information Table</h1>
+  <!--   Table format credits on  http://codepen.io/jordyvanraaij/pen/jlAqp -->
+  
+  <?php 
+		include_once("connection.php");
+		session_start();
+		$stmt =$db->prepare('SELECT COUNT(*) As facil FROM "public"."Login" WHERE data BETWEEN now()- INTERVAL \'7 day\' AND now() ;');  /* Starts from the past to the future*/
+		$stmt->execute();
+		$lastweek = $stmt->fetch();
+		
+		$stmt2 =$db->prepare('SELECT COUNT(*) As facil FROM "public"."Login" WHERE data BETWEEN now()- INTERVAL \'31 day\' AND now() ;');
+		$stmt2->execute();
+		$lastmonth = $stmt2->fetch();
+		
+		$stmt3 =$db->prepare('SELECT COUNT(*) As facil FROM "public"."Login"');
+		$stmt3->execute();
+		$always = $stmt3->fetch();
+                        
+    ?>
+	<h1><img src="css/basictitle.png" width="30%" height="30%" /></h1>
 
 	<table>
-	  
+	
 	  <tr>
 		<!--<th>Main driver</th>-->
-		<th data-th="Driver details"><span>First name</span></th>
-		<th>Surname</th>
-		<th>Date of birth</th>
-		<th>Relationship</th>
+		<th data-th="Driver details"><span><h2>Property</h2></span></th>
+		<th><h2>Last week</h2></th>
+		<th><h2>Last month</h2></th>
+		<th><h2>Total</h2></th>
 	  </tr>
 	  
 	  <tr>
 		<!--<td><input type="radio"/></td>-->
-		<td>Steve</td>
-		<td>Foo</td>
-		<td>01/01/1978</td>
-		<td>Policyholder</td>
+		<td><h4>Number of Logins:</h4></td>
+		<!-- insert php -->
+		<td><?php echo $lastweek['facil'];  ?></td>
+		<td><?php echo $lastmonth['facil']; ?></td>
+		<td><?php echo $always['facil'];    ?></td>
 	  </tr>
 	  
 	  <tr>
 		<!--<td><input type="radio"/></td>-->
-		<td>Steffie</td>
+		<td><h4>Number of hours played: </h4></td>
+		<!-- insert php -->
 		<td>Foo</td>
 		<td>01/01/1978</td>
 		<td>Spouse</td>
@@ -48,7 +67,8 @@
 	  
 	  <tr>
 		<!--<td><input type="radio"/></td>-->
-		<td>Stan</td>
+		<td><h4>Number of [Registered] Players: </h4></td>
+		<!-- insert php -->
 		<td>Foo</td>
 		<td>01/01/1994</td>
 		<td>Son</td>
@@ -56,7 +76,8 @@
 	  
 	  <tr>
 		<!--<td><input type="radio"/></td>-->
-		<td>Stella</td>
+		<td><h4>Number of average hours played per login: </h4></td>
+		<!-- insert php with aritmetics -->
 		<td>Foo</td>
 		<td>01/01/1992</td>
 		<td>Daughter</td>

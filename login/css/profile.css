@@ -1,8 +1,23 @@
 /* Based on : http://johnsardine.com/freebies/dl-html-css/simple-little-tab/ */
 
-html, body {
+body {
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+	background-image: url("fundobranco.png");
+	background-size: cover;
     width: 100%;
 	text-align:center;
+}
+
+h1{
+	color: red;
+	font-size: 35px;
+}
+
+h4{
+	font-size: 13px;
+	text-decoration: underline;
 }
 table a:link {
 	color: #666;
@@ -101,4 +116,13 @@ table tr:hover td {
 	background: #f2f2f2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+
+.loginspecific{
+	background: red;
+	color: red;
+}
+
+div{
+	background: blue;
 }

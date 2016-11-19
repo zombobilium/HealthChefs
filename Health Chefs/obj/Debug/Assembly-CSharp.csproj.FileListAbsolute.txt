@@ -21,3 +21,26 @@ C:\Users\Eduardo Reis\Documents\LDSO\LDSO\Health Chefs\Temp\bin\Debug\UnityEngin
 C:\Users\Eduardo Reis\Documents\LDSO\LDSO\Health Chefs\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Eduardo Reis\Documents\LDSO\LDSO\Health Chefs\obj\Debug\Assembly-CSharp.dll
 C:\Users\Eduardo Reis\Documents\LDSO\LDSO\Health Chefs\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\obj\Debug\Assembly-CSharp.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\Temp\bin\Debug\UnityEngine.Analytics.xml
+C:\Users\Eduardo Reis\Documents\LDSO\LDSO privado\HealthChefs\Health Chefs\obj\Debug\Assembly-CSharp.pdb

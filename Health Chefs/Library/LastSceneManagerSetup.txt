@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Guess_Scene.unity
+- path: Assets/Menus/Scenes/Menu.unity
   isLoaded: 1
   isActive: 1

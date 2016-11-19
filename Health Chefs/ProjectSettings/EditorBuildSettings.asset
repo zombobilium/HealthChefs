@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Menu.unity
+  - enabled: 0
+    path: Assets/Minigame 1/Scenes/Menu.unity
   - enabled: 0
     path: Assets/Pepino_scene.unity
   - enabled: 0
@@ -30,10 +30,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Pimento_scene.unity
   - enabled: 0
+    path: Assets/Minigame 1/Scenes/World.unity
+  - enabled: 0
     path: Assets/Tomate_scene.unity
   - enabled: 1
-    path: Assets/Minigame_1_Menu.unity
+    path: Assets/Menus/Scenes/Homepage.unity
   - enabled: 1
-    path: Assets/World.unity
+    path: Assets/Minigame 1/Scenes/Minigame_1_Menu.unity
   - enabled: 1
-    path: Assets/Guess_Scene.unity
+    path: Assets/Minigame 1/Scenes/Guess_Scene.unity
+  - enabled: 1
+    path: Assets/Minigame 3/Scenes/LunchBox.unity
+  - enabled: 1
+    path: Assets/Menus/Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/Menus/Scenes/World.unity

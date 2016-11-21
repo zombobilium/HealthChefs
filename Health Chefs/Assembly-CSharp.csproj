@@ -45,12 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Minigame 1 Images\Scripts\FileManager.cs" />
-     <Compile Include="Assets\Minigame 1 Images\Scripts\GameController.cs" />
-     <Compile Include="Assets\Minigame 1 Images\Scripts\Minigame1Menu_SceneLoader.cs" />
-     <Compile Include="Assets\Minigame 1 Images\Scripts\Minigame1Status.cs" />
-     <Compile Include="Assets\Minigame 1 Images\Scripts\SceneLoader.cs" />
-     <Compile Include="Assets\Minigame 1 Images\Scripts\StaticSceneManager.cs" />
+     <Compile Include="Assets\Menus\Scripts\DynamicBackground.cs" />
+     <Compile Include="Assets\Menus\Scripts\DynamicUI.cs" />
+     <Compile Include="Assets\Menus\Scripts\Fading.cs" />
+     <Compile Include="Assets\Menus\Scripts\SceneLoaderOverTime.cs" />
+     <Compile Include="Assets\Minigame 1\Scripts\FileManager.cs" />
+     <Compile Include="Assets\Minigame 1\Scripts\GameController.cs" />
+     <Compile Include="Assets\Minigame 1\Scripts\Minigame1Menu_SceneLoader.cs" />
+     <Compile Include="Assets\Minigame 1\Scripts\Minigame1Status.cs" />
+     <Compile Include="Assets\Minigame 1\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\Minigame 1\Scripts\StaticSceneManager.cs" />
+     <Compile Include="Assets\Minigame 3\Scripts\DynamicGrid.cs" />
+     <Compile Include="Assets\Minigame 3\Scripts\Minigame3Controller.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />

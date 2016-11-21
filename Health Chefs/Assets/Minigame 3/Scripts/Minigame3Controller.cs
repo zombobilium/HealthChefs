@@ -10,11 +10,11 @@ public class Minigame3Controller : MonoBehaviour {
 	public Text time;
 	public Text score;
 	public float roundTime;
-	private int scoreNumber;
+	private int scoreNumber = 0;
 	private List<string> healthyIngredients;
 	private List<string> unhealthyIngredients;
 
-	void Start () 
+	public void Start () 
 	{
 		time.text = "Time Left: " + roundTime;
 		score.text = "Score: " + scoreNumber;
@@ -33,7 +33,7 @@ public class Minigame3Controller : MonoBehaviour {
 		setIngredients ();
 	}
 
-	void Update()
+	public void Update()
 	{
 		roundTime -= Time.deltaTime;
 
@@ -67,7 +67,7 @@ public class Minigame3Controller : MonoBehaviour {
 		}
 	}
 
-	void taskOnClick(Button btn)
+	public void taskOnClick(Button btn)
 	{
 		if (btn.GetComponent<Image> ().sprite.name.Contains ("_0")) {
 			btn.transform.GetChild (0).gameObject.SetActive (true);
@@ -101,5 +101,10 @@ public class Minigame3Controller : MonoBehaviour {
 	{
 		choice1.interactable = false;
 		choice2.interactable = false;
+	}
+
+	public int getScoreNumber()
+	{
+		return scoreNumber;
 	}
 }

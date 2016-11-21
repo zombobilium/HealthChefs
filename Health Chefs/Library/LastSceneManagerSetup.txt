@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Menus/Scenes/Menu.unity
+- path: Assets/Minigame 3/Scenes/LunchBox.unity
   isLoaded: 1
   isActive: 1

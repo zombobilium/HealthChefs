@@ -14,12 +14,28 @@
     <link rel="stylesheet" href="css/profile.css">
 
 
+
+	
+	
   </head>
 
   <body>
   <!--   Table format credits on  http://codepen.io/jordyvanraaij/pen/jlAqp -->
   
+	<script src="jquery.js"></script>
+    <script>
+ 
+    // Your code goes here.
+	jQuery.ready(function(){
+		jQuery('#hideshow').live('click', function(event) {        
+			 jQuery('#content').toggle('show');
+			 console.log("Thru here");
+		});
+	});
+ 
+    </script>
   <?php 
+  
 		include_once("connection.php");
 		session_start();
 		
@@ -128,16 +144,20 @@
 		<td> - </td>
 		<td><?php echo round($avghoursplayed['facil'],2);  ?></td>
 	  </tr>
+	</table>
 	  
-	  <!--
-	  <tr>
-		<td><h4>Number of average hours played per login: </h4></td>
-		<td>Foo</td>
-		<td>01/01/1992</td>
-		<td>Daughter</td>
-	  </tr>-->
+	  
+	  <div id='content'>
+		  <table>
+		  <tr>
+			<td><h4>Number of Average Played Hours: </h4></td>
+			<td><?php echo round($avghoursplayed['facil'],2);  ?></td>
+		  </tr>
+		  </table>
+	  </div>
+	  <input type='button' id='hideshow1' value='hide/show'>
   
-</table>
+
 
 	</body>
 </html>

@@ -80,6 +80,13 @@
 		$stmt6->execute();
 		$alwaysregs = $stmt6->fetch();
 		
+		
+		// Number of hours average played
+		
+		$stmt7 = $db->prepare('SELECT AVG(numberhours) As facil FROM "public"."User"');
+		$stmt7->execute();
+		$avghoursplayed = $stmt7->fetch();
+		
                         
     ?>
 	<h1><img src="css/basictitle.png" width="30%" height="30%" /></h1>
@@ -113,6 +120,13 @@
 		<td><?php echo $lastweekregs['facil'];  ?></td>
 		<td><?php echo $lastmonthregs['facil'];  ?></td>
 		<td><?php echo $alwaysregs['facil'];  ?></td>
+	  </tr>
+	  
+	  <tr>
+		<td><h4>Number of Average Played Hours: </h4></td>
+		<td> - </td>
+		<td> - </td>
+		<td><?php echo round($avghoursplayed['facil'],2);  ?></td>
 	  </tr>
 	  
 	  <!--

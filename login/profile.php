@@ -22,16 +22,72 @@
   <body>
   <!--   Table format credits on  http://codepen.io/jordyvanraaij/pen/jlAqp -->
   
-	<script src="jquery.js"></script>
     <script>
- 
-    // Your code goes here.
-	jQuery.ready(function(){
-		jQuery('#hideshow').live('click', function(event) {        
-			 jQuery('#content').toggle('show');
-			 console.log("Thru here");
-		});
-	});
+	
+	
+	var hideshow1 = false;
+	var hideshow2 = false;
+	var hideshow3 = false;
+	var hideshow4 = false;
+	
+	
+	function myFunction1(){
+		hideshow1 = !hideshow1;
+		console.log("entrou no myfunc 1");
+		if(hideshow1) {
+			console.log("if true");
+			document.getElementById("target1").style.display = 'block';
+		}
+		else
+		{
+			console.log("if false");
+			document.getElementById("target1").style.display = 'none';
+		}
+	}
+	
+	function myFunction2(){
+		hideshow2 = !hideshow2;
+		console.log("entrou no myfunc 2");
+		if(hideshow2) {
+			console.log("if true");
+			document.getElementById("target2").style.display = 'block';
+		}
+		else
+		{
+			console.log("if false");
+			document.getElementById("target2").style.display = 'none';
+		}
+	}
+	
+	function myFunction3(){
+		hideshow3 = !hideshow3;
+		console.log("entrou no myfunc 3");
+		
+		if(hideshow3) {
+			console.log("if true");
+			document.getElementById("target3").style.display = 'block';
+		}
+		else
+		{
+			console.log("if false");
+			document.getElementById("target3").style.display = 'none';
+		}
+	}
+	
+	function myFunction4(){
+		console.log("entrou no myfunc 4");
+		hideshow4 = !hideshow4;
+		
+		if(hideshow4) {
+			console.log("if true");
+			document.getElementById("target4").style.display = 'block';
+		}
+		else
+		{
+			console.log("if false");
+			document.getElementById("target4").style.display = 'none';
+		}
+	}
  
     </script>
   <?php 
@@ -103,6 +159,13 @@
 		$stmt7->execute();
 		$avghoursplayed = $stmt7->fetch();
 		
+		//Each minigame highscore
+		
+		$stmt8 = $db->prepare('SELECT MAX(MiniGame.highScore) As MHS FROM "public"."MiniGame" WHERE idGame=1');
+		$stmt8->execute();
+		$mg1hs = $stmt8->fetch();
+		//DEBUG
+		
                         
     ?>
 	<h1><img src="css/basictitle.png" width="30%" height="30%" /></h1>
@@ -145,19 +208,90 @@
 		<td><?php echo round($avghoursplayed['facil'],2);  ?></td>
 	  </tr>
 	</table>
+	  <br/> <br/> <br/> <br/>
 	  
 	  
-	  <div id='content'>
+	  <!-- Minigame 1 -->
+	  <button onClick="myFunction1()">MiniGame1</button>
+	  <div style="display: none;" id="target1">
 		  <table>
 		  <tr>
-			<td><h4>Number of Average Played Hours: </h4></td>
-			<td><?php echo round($avghoursplayed['facil'],2);  ?></td>
+		<!--<th>Main driver</th>-->
+			<th data-th="Driver details"><span><h2>MiniGame 1</h2></span></th>
+		  </tr>
+		  <tr>
+			<td><h4>HighScore: </h4></td>
+			<td><?php echo $mg1hs['MHS'];  ?></td>
 		  </tr>
 		  </table>
 	  </div>
-	  <input type='button' id='hideshow1' value='hide/show'>
-  
-
+	  
+	  
+	  
+	   <!-- Minigame 2 -->
+	   <button onClick="myFunction2()">MiniGame2</button>
+	  <div style="display: none;" id="target2">
+		  <table>
+		  <tr>
+		<!--<th>Main driver</th>-->
+			<th data-th="Driver details"><span><h2>MiniGame 2</h2></span></th>
+			<th><h2>Last week</h2></th>
+			<th><h2>Last month</h2></th>
+			<th><h2>Total</h2></th>
+		  </tr>
+		  <tr>
+			<td><h4>Number of [Registered] Players: </h4></td>
+			<td><?php echo $lastweekregs['facil'];  ?></td>
+			<td><?php echo $lastmonthregs['facil'];  ?></td>
+			<td><?php echo $alwaysregs['facil'];  ?></td>
+		  </tr>
+		  </table>
+	  </div>
+	  
+	  
+	  
+	   <!-- Minigame 3 -->
+	   <button onClick="myFunction3()">MiniGame3</button>
+	  <div style="display: none;" id="target3">
+		  <table>
+		  <tr>
+		<!--<th>Main driver</th>-->
+			<th data-th="Driver details"><span><h2>MiniGame 3</h2></span></th>
+			<th><h2>Last week</h2></th>
+			<th><h2>Last month</h2></th>
+			<th><h2>Total</h2></th>
+		  </tr>
+		  <tr>
+			<td><h4>Number of [Registered] Players: </h4></td>
+			<td><?php echo $lastweekregs['facil'];  ?></td>
+			<td><?php echo $lastmonthregs['facil'];  ?></td>
+			<td><?php echo $alwaysregs['facil'];  ?></td>
+		  </tr>
+		  </table>
+	  </div>
+	  
+	  
+	  
+	   <!-- Minigame 4 -->
+	   <button onClick="myFunction4()">MiniGame4</button>
+	  <div style="display: none;" id="target4">
+		  <table>
+		  <tr>
+		<!--<th>Main driver</th>-->
+			<th data-th="Driver details"><span><h2>MiniGame 4</h2></span></th>
+			<th><h2>Last week</h2></th>
+			<th><h2>Last month</h2></th>
+			<th><h2>Total</h2></th>
+		  </tr>
+		  <tr>
+			<td><h4>Number of [Registered] Players: </h4></td>
+			<td><?php echo $lastweekregs['facil'];  ?></td>
+			<td><?php echo $lastmonthregs['facil'];  ?></td>
+			<td><?php echo $alwaysregs['facil'];  ?></td>
+		  </tr>
+		  </table>
+	  </div>
+	  
 
 	</body>
 </html>

@@ -159,12 +159,46 @@
 		$stmt7->execute();
 		$avghoursplayed = $stmt7->fetch();
 		
-		//Each minigame highscore
+		//Each minigame highscore  Minigame1
 		
-		$stmt8 = $db->prepare('SELECT MAX(MiniGame.highScore) As MHS FROM "public"."MiniGame" WHERE idGame=1');
+		$stmt8 = $db->prepare('SELECT MAX("MiniGame"."highScore") As MHS FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=1');
 		$stmt8->execute();
 		$mg1hs = $stmt8->fetch();
-		//DEBUG
+		
+		// AND each minigame average times played
+		$stmt9 = $db->prepare('SELECT AVG("MiniGame"."timesPlayed") As tp FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=1');
+		$stmt9->execute();
+		$mg1tp = $stmt9->fetch();
+		
+		//Each minigame highscore Minigame2
+		$stmt10 = $db->prepare('SELECT MAX("MiniGame"."highScore") As MHS FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=2');
+		$stmt10->execute();
+		$mg2hs = $stmt10->fetch();
+		
+		// AND each minigame average times played
+		$stmt11 = $db->prepare('SELECT AVG("MiniGame"."timesPlayed") As tp FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=2');
+		$stmt11->execute();
+		$mg2tp = $stmt11->fetch();
+		
+		//Each minigame highscore Minigame3
+		$stmt12 = $db->prepare('SELECT MAX("MiniGame"."highScore") As MHS FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=3');
+		$stmt12->execute();
+		$mg3hs = $stmt12->fetch();
+		
+		// AND each minigame average times played
+		$stmt13 = $db->prepare('SELECT AVG("MiniGame"."timesPlayed") As tp FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=3');
+		$stmt13->execute();
+		$mg3tp = $stmt13->fetch();
+		
+		//Each minigame highscore Minigame4
+		$stmt14 = $db->prepare('SELECT MAX("MiniGame"."highScore") As MHS FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=4');
+		$stmt14->execute();
+		$mg4hs = $stmt14->fetch();
+		
+		// AND each minigame average times played
+		$stmt15 = $db->prepare('SELECT AVG("MiniGame"."timesPlayed") As tp FROM "public"."MiniGame" WHERE "MiniGame"."idGame"=4');
+		$stmt15->execute();
+		$mg4tp = $stmt15->fetch();
 		
                         
     ?>
@@ -221,7 +255,11 @@
 		  </tr>
 		  <tr>
 			<td><h4>HighScore: </h4></td>
-			<td><?php echo $mg1hs['MHS'];  ?></td>
+			<td><?php echo $mg1hs['mhs'];  ?></td>
+		  </tr>
+		  <tr>
+			<td><h4>Average Times Played: </h4></td>
+			<td><?php echo round($mg1tp['tp'],2);  ?></td>
 		  </tr>
 		  </table>
 	  </div>
@@ -235,15 +273,14 @@
 		  <tr>
 		<!--<th>Main driver</th>-->
 			<th data-th="Driver details"><span><h2>MiniGame 2</h2></span></th>
-			<th><h2>Last week</h2></th>
-			<th><h2>Last month</h2></th>
-			<th><h2>Total</h2></th>
 		  </tr>
 		  <tr>
-			<td><h4>Number of [Registered] Players: </h4></td>
-			<td><?php echo $lastweekregs['facil'];  ?></td>
-			<td><?php echo $lastmonthregs['facil'];  ?></td>
-			<td><?php echo $alwaysregs['facil'];  ?></td>
+			<td><h4>HighScore: </h4></td>
+			<td><?php echo $mg2hs['mhs'];  ?></td>
+		  </tr>
+		  <tr>
+			<td><h4>Average Times Played: </h4></td>
+			<td><?php echo round($mg2tp['tp'],2);  ?></td>
 		  </tr>
 		  </table>
 	  </div>
@@ -257,15 +294,14 @@
 		  <tr>
 		<!--<th>Main driver</th>-->
 			<th data-th="Driver details"><span><h2>MiniGame 3</h2></span></th>
-			<th><h2>Last week</h2></th>
-			<th><h2>Last month</h2></th>
-			<th><h2>Total</h2></th>
 		  </tr>
 		  <tr>
-			<td><h4>Number of [Registered] Players: </h4></td>
-			<td><?php echo $lastweekregs['facil'];  ?></td>
-			<td><?php echo $lastmonthregs['facil'];  ?></td>
-			<td><?php echo $alwaysregs['facil'];  ?></td>
+			<td><h4>HighScore: </h4></td>
+			<td><?php echo $mg3hs['mhs'];  ?></td>
+		  </tr>
+		  <tr>
+			<td><h4>Average Times Played: </h4></td>
+			<td><?php echo round($mg3tp['tp'],2);  ?></td>
 		  </tr>
 		  </table>
 	  </div>
@@ -279,15 +315,14 @@
 		  <tr>
 		<!--<th>Main driver</th>-->
 			<th data-th="Driver details"><span><h2>MiniGame 4</h2></span></th>
-			<th><h2>Last week</h2></th>
-			<th><h2>Last month</h2></th>
-			<th><h2>Total</h2></th>
 		  </tr>
 		  <tr>
-			<td><h4>Number of [Registered] Players: </h4></td>
-			<td><?php echo $lastweekregs['facil'];  ?></td>
-			<td><?php echo $lastmonthregs['facil'];  ?></td>
-			<td><?php echo $alwaysregs['facil'];  ?></td>
+			<td><h4>HighScore: </h4></td>
+			<td><?php echo $mg4hs['mhs'];  ?></td>
+		  </tr>
+		  <tr>
+			<td><h4>Average Times Played: </h4></td>
+			<td><?php echo round($mg4tp['tp'],2);  ?></td>
 		  </tr>
 		  </table>
 	  </div>

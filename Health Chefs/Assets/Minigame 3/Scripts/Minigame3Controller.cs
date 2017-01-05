@@ -5,22 +5,54 @@ using System.Collections.Generic;
 
 public class Minigame3Controller : MonoBehaviour {
 
+	public Text instructions;
+	public GameObject instructionsPanel;
+	public GameObject gameEndPanel;
+	public Text gameEndMessage;
+	public Text instructionHighscoreSub;
+	public Text gameEndHighscoreSub;
 	public Button choice1;
 	public Button choice2;
 	public Text time;
 	public Text score;
+	public Text highscore;
+	public Text highscore2;
 	public float roundTime;
 	private int scoreNumber = 0;
 	private List<string> healthyIngredients;
 	private List<string> unhealthyIngredients;
+	private bool gameOn = false;
+	SendToServer sendToServer;
 
 	public void Start () 
 	{
-		time.text = "Time Left: " + roundTime;
-		score.text = "Score: " + scoreNumber;
+		if (StaticMinigame3Controller.getReplay () == true)
+			instructionsPanel.SetActive (false);
 
-		healthyIngredients = new List<string> () { "sandwich_0", "apple_0", "water_0" };
-		unhealthyIngredients = new List<string> (){ "chocolateChipCookies_1", "pizza_1", "soda_1" };
+		if (StaticLanguage.getLanguage ().Equals ("portuguese")) {
+			instructions.text = "Em cada ronda, escolhe a comida que deves levar na lancheira. A cada resposta correta ganharás 1 ponto.";
+			instructionHighscoreSub.text = "Melhor Pontuação";
+			gameEndHighscoreSub.text = "Melhor Pontuação";
+		} else {
+			instructions.text = "In each round, choose the food you should take on your lunchbox. Each correct answear awards you with 1 point."; 
+			instructionHighscoreSub.text = "Highscore";
+			gameEndHighscoreSub.text = "Highscore";
+		}
+
+		if (!System.IO.File.Exists(Application.persistentDataPath + "/sendToServer"))
+		{
+			sendToServer = new SendToServer();
+		} else 
+		{
+			sendToServer = FileManager.ReadFromBinaryFile<SendToServer> (Application.persistentDataPath + "/sendToServer");
+		}
+		time.text = roundTime.ToString();
+		score.text = scoreNumber.ToString();
+
+		highscore.text = "" + sendToServer.minigame3Highscore;
+
+		healthyIngredients = new List<string> () { "banana_0", "carrot_0", "cucumber_0", "grapes_0", "kiwi_0", "orange_0", "pear_0", "sandwich_0", "tomato_0" };
+		unhealthyIngredients = new List<string> (){ "candy_1", "candyStick_1", "hamburger_1", "hotdog_1", "pizza_1", "popcorn_1" };
 
 		choice1.onClick.AddListener (delegate {
 			taskOnClick (choice1);
@@ -35,13 +67,15 @@ public class Minigame3Controller : MonoBehaviour {
 
 	public void Update()
 	{
-		roundTime -= Time.deltaTime;
+		if (gameOn || StaticMinigame3Controller.getReplay() == true) {
+			roundTime -= Time.deltaTime;
 
-		if (roundTime > 0) {
-			time.text = "Time Left: " + (int)roundTime;
-			score.text = "Score: " + scoreNumber;
+			if (roundTime > 0) {
+				time.text = "" + (int)roundTime;
+				score.text = scoreNumber.ToString();
+			} else
+				gameEnd ();
 		}
-		else gameEnd ();
 	}
 
 	void setIngredients()
@@ -101,10 +135,49 @@ public class Minigame3Controller : MonoBehaviour {
 	{
 		choice1.interactable = false;
 		choice2.interactable = false;
+		if (StaticLanguage.getLanguage ().Equals ("portuguese")) {
+			if (scoreNumber > sendToServer.minigame3Highscore)
+				gameEndMessage.text = "Acabou o tempo!\nFizeste " + scoreNumber + " pontos e bateste a tua antiga melhor pontuação.";
+			else
+				gameEndMessage.text = "Acabou o tempo!\nFizeste " + scoreNumber + " pontos mas não conseguiste bater a tua melhor pontuação.";
+		} 
+		else 
+		{
+			if (scoreNumber > sendToServer.minigame3Highscore)
+				gameEndMessage.text = "Time is up!\nYou got " + scoreNumber + " points and you were able to beat your previous highscore.";
+			else
+				gameEndMessage.text = "Time is up!\nYou got " + scoreNumber + " points but you were not able to beat your previous highscore.";
+		}
+
+		if(scoreNumber > sendToServer.minigame3Highscore)
+			sendToServer.minigame3Highscore = scoreNumber;
+
+		sendToServer.minigame3TimesPlayed++;
+		FileManager.WriteToBinaryFile (Application.persistentDataPath + "/sendToServer", sendToServer);
+		gameOn = false;
+
+		highscore2.text = "" + sendToServer.minigame3Highscore;
+		gameEndPanel.SetActive (true);
 	}
 
 	public int getScoreNumber()
 	{
 		return scoreNumber;
+	}
+
+	public void turnOffInstructions()
+	{
+		instructionsPanel.SetActive (false);
+		gameOn = true;
+	}
+
+	public void setReplayTrue()
+	{
+		StaticMinigame3Controller.setReplay (true);
+	}
+
+	public void setReplayFalse()
+	{
+		StaticMinigame3Controller.setReplay (false);
 	}
 }

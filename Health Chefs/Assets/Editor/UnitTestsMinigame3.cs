@@ -15,6 +15,7 @@ public class UnitTestsMinigame3 : MonoBehaviour {
 	public UnityEngine.UI.Text score;
 	public float roundTime;
 	public Image right1, wrong1, right2, wrong2;
+	SendToServer sendToServer;
 
 	[SetUp]
 	public void SetUp()

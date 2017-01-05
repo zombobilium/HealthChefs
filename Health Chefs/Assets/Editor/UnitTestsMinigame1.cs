@@ -61,7 +61,8 @@ public class UnitTestsMinigame1 : MonoBehaviour {
 	[Test]
 	public void checkImageName()
 	{
-		StaticSceneManager.setImage ("cenoura");
+		StaticSceneManager.setImage ("cenoura_carrot");
+		StaticLanguage.setLanguage ("portuguese");
 		game.Start();
 		Assert.That ("CENOURA" == game.solution);
 	}
@@ -69,7 +70,8 @@ public class UnitTestsMinigame1 : MonoBehaviour {
 	[Test]
 	public void checkLetterInsertionMiddleOfWord()
 	{
-		StaticSceneManager.setImage ("cenoura");
+		StaticSceneManager.setImage ("cenoura_carrot");
+		StaticLanguage.setLanguage ("portuguese");
 		game.Start();
 		GameObject go = new GameObject ();
 		Button button = go.AddComponent<Button> ();
@@ -86,7 +88,8 @@ public class UnitTestsMinigame1 : MonoBehaviour {
 	[Test]
 	public void checkLetterInsertionBegginingOfWord()
 	{
-		StaticSceneManager.setImage ("cenoura");
+		StaticSceneManager.setImage ("cenoura_carrot");
+		StaticLanguage.setLanguage ("portuguese");
 		game.Start();
 		GameObject go = new GameObject ();
 		Button button = go.AddComponent<Button> ();
@@ -103,7 +106,8 @@ public class UnitTestsMinigame1 : MonoBehaviour {
 	[Test]
 	public void checkError()
 	{
-		StaticSceneManager.setImage ("cenoura");
+		StaticSceneManager.setImage ("cenoura_carrot");
+		StaticLanguage.setLanguage ("portuguese");
 		game.Start();
 		GameObject go = new GameObject ();
 		Button button = go.AddComponent<Button> ();
@@ -132,7 +136,8 @@ public class UnitTestsMinigame1 : MonoBehaviour {
 	[Test]
 	public void checkWin()
 	{
-		StaticSceneManager.setImage ("cenoura");
+		StaticSceneManager.setImage ("cenoura_carrot");
+		StaticLanguage.setLanguage ("portuguese");
 		game.Start();
 		GameObject go = new GameObject ();
 		Button button = go.AddComponent<Button> ();

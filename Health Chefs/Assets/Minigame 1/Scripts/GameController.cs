@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour {
 	private int lettersNumber;
 	public int lostLives = 0;
 	Minigame1Status status;
+	private SendToServer sendToServer;
+	private bool gameOn = true;
 
 	public void Start()
 	{
@@ -40,9 +42,23 @@ public class GameController : MonoBehaviour {
 		{
 			status = FileManager.ReadFromBinaryFile<Minigame1Status> (Application.persistentDataPath + "/data");
 		}
-		
+
+		if (!System.IO.File.Exists(Application.persistentDataPath + "/sendToServer"))
+		{
+			sendToServer = new SendToServer();
+		} else 
+		{
+			sendToServer = FileManager.ReadFromBinaryFile<SendToServer> (Application.persistentDataPath + "/sendToServer");
+		}
+			
 		picture.GetComponent<Image> ().sprite = Resources.Load ("Minigame 1/" + StaticSceneManager.GetSceneImage(), typeof(Sprite)) as Sprite;
-		solution = picture.GetComponent<Image> ().sprite.name.ToUpper();
+		string imageName = picture.GetComponent<Image> ().sprite.name.ToUpper();
+		string[] imageNameLanguages = imageName.Split ('_');
+		if(StaticLanguage.getLanguage() == "portuguese")
+			solution = imageNameLanguages[0];
+		if (StaticLanguage.getLanguage () == "english")
+			solution = imageNameLanguages [1];
+		
 		text.text = " ";
 		setBlanks (solution);
 		setButtons (solution);
@@ -50,18 +66,21 @@ public class GameController : MonoBehaviour {
 		
 	public void Update()
 	{
-		if (lostLives == 1)
-			lives.transform.GetChild(2).gameObject.SetActive (false);
-		else if (lostLives == 2)
-			lives.transform.GetChild(1).gameObject.SetActive (false);
-		else if (lostLives == 3) {
-			lives.transform.GetChild(0).gameObject.SetActive (false);
-			gameLose ();
-		}
+		if (gameOn)
+		{
+			if (lostLives == 1)
+				lives.transform.GetChild (2).gameObject.SetActive (false);
+			else if (lostLives == 2)
+				lives.transform.GetChild (1).gameObject.SetActive (false);
+			else if (lostLives == 3) {
+				lives.transform.GetChild (0).gameObject.SetActive (false);
+				gameLose ();
+			}
 
-		if (lettersNumber == solution.Length) {
-			lettersNumber = 0;
-			gameWin ();
+			if (lettersNumber == solution.Length) {
+				lettersNumber = 0;
+				gameWin ();
+			}
 		}
 	}
 
@@ -73,8 +92,15 @@ public class GameController : MonoBehaviour {
 			buttonList [i].gameObject.SetActive (false);
 		}
 
-		status.ingredients [solution] = 1;
-		FileManager.WriteToBinaryFile (Application.persistentDataPath + "/cenas", status);
+		picture.GetComponent<Image> ().sprite = Resources.Load ("Minigame 1/" + StaticSceneManager.GetSceneImage(), typeof(Sprite)) as Sprite;
+		string imageName = picture.GetComponent<Image> ().sprite.name.ToUpper();
+		string[] imageNameLanguages = imageName.Split ('_');
+		status.ingredients [imageNameLanguages[0]] = 1;
+		sendToServer.minigame1TimesPlayed++;
+		sendToServer.minigame1Highscore++;
+		FileManager.WriteToBinaryFile (Application.persistentDataPath + "/data", status);
+		FileManager.WriteToBinaryFile (Application.persistentDataPath + "/sendToServer", sendToServer);
+		gameOn = false;
 	}
 
 
@@ -85,6 +111,10 @@ public class GameController : MonoBehaviour {
 		for (int i = 0; i < buttonList.Length; i++) {
 			buttonList [i].gameObject.SetActive (false);
 		}
+
+		sendToServer.minigame1TimesPlayed++;
+		FileManager.WriteToBinaryFile (Application.persistentDataPath + "/sendToServer", sendToServer);
+		gameOn = false;
 	}
 
 	public void loadScene(string level)

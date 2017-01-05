@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Minigame 3/Scenes/LunchBox.unity
+- path: Assets/Minigame 2/Scenes/Fridge.unity
   isLoaded: 1
   isActive: 1

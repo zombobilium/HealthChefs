@@ -128,13 +128,13 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
- <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO privado/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.dll</HintPath>
+ <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO TEMP/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Mdb">
- <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO privado/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.Mdb.dll</HintPath>
+ <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO TEMP/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute">
- <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO privado/HealthChefs/Health Chefs/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
+ <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO TEMP/HealthChefs/Health Chefs/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

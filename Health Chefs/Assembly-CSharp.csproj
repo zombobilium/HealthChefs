@@ -45,18 +45,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Avatar\Scripts\Avatar.cs" />
+     <Compile Include="Assets\Avatar\Scripts\AvatarSelection.cs" />
+     <Compile Include="Assets\Menus\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Menus\Scripts\DynamicBackground.cs" />
      <Compile Include="Assets\Menus\Scripts\DynamicUI.cs" />
      <Compile Include="Assets\Menus\Scripts\Fading.cs" />
+     <Compile Include="Assets\Menus\Scripts\Games.cs" />
+     <Compile Include="Assets\Menus\Scripts\Menu.cs" />
      <Compile Include="Assets\Menus\Scripts\SceneLoaderOverTime.cs" />
+     <Compile Include="Assets\Menus\Scripts\StaticLanguage.cs" />
+     <Compile Include="Assets\Menus\Scripts\TimerCounter.cs" />
+     <Compile Include="Assets\Menus\Scripts\languageButtons.cs" />
      <Compile Include="Assets\Minigame 1\Scripts\FileManager.cs" />
      <Compile Include="Assets\Minigame 1\Scripts\GameController.cs" />
      <Compile Include="Assets\Minigame 1\Scripts\Minigame1Menu_SceneLoader.cs" />
      <Compile Include="Assets\Minigame 1\Scripts\Minigame1Status.cs" />
      <Compile Include="Assets\Minigame 1\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Minigame 1\Scripts\StaticSceneManager.cs" />
-     <Compile Include="Assets\Minigame 3\Scripts\DynamicGrid.cs" />
+     <Compile Include="Assets\Minigame 2\Scripts\DragHandler.cs" />
+     <Compile Include="Assets\Minigame 2\Scripts\Minigame2Controller.cs" />
+     <Compile Include="Assets\Minigame 2\Scripts\SlotHandler.cs" />
+     <Compile Include="Assets\Minigame 2\Scripts\StaticCheckGame.cs" />
      <Compile Include="Assets\Minigame 3\Scripts\Minigame3Controller.cs" />
+     <Compile Include="Assets\Minigame 3\Scripts\StaticMinigame3Controller.cs" />
+     <Compile Include="Assets\Minigame 4\Scripts\Minigame4Controller.cs" />
+     <Compile Include="Assets\Minigame 4\Scripts\SlotHandlerMG4.cs" />
+     <Compile Include="Assets\Minigame 4\Scripts\SlotHandlerMG4Inventory.cs" />
+     <Compile Include="Assets\Server\SendToServer.cs" />
+     <Compile Include="Assets\Server\TransferDataToServer.cs" />
+     <Compile Include="Assets\Settings\Scripts\CheckSounds.cs" />
+     <Compile Include="Assets\Settings\Scripts\Settings.cs" />
+     <Compile Include="Assets\Settings\Scripts\StaticSettings.cs" />
+     <Compile Include="Assets\Teste\TimeTest.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
@@ -125,10 +146,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
- <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO privado/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.dll</HintPath>
+ <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO TEMP/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Mdb">
- <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO privado/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.Mdb.dll</HintPath>
+ <HintPath>C:/Users/Eduardo Reis/Documents/LDSO/LDSO TEMP/HealthChefs/Health Chefs/Assets/UnityTestTools/IntegrationTestsFramework/Libs/Mono.Cecil.Mdb.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

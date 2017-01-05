@@ -45,3 +45,13 @@ EditorBuildSettings:
     path: Assets/Menus/Scenes/Menu.unity
   - enabled: 1
     path: Assets/Menus/Scenes/World.unity
+  - enabled: 1
+    path: Assets/Avatar/Scenes/AvatarSelection.unity
+  - enabled: 1
+    path: Assets/Minigame 2/Scenes/Fridge.unity
+  - enabled: 1
+    path: Assets/Minigame 4/Scenes/DinnerPlate.unity
+  - enabled: 1
+    path: Assets/Teste/Scenes/Timeout.unity
+  - enabled: 1
+    path: Assets/Settings/Scenes/Settings.unity

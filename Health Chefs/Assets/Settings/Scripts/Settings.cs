@@ -8,9 +8,22 @@ public class Settings : MonoBehaviour {
 	public Button musicOff;
 	public Button soundOn;
 	public Button soundOff;
+	public Text title;
+	public Text som;
+	public Text musica;
 
 	// Use this for initialization
 	void Start () {
+
+		if (StaticLanguage.getLanguage ().Equals ("portuguese")) {
+			title.text = "Definições";
+			som.text = "Som";
+			musica.text = "Música";
+		} else {
+			title.text = "Settings";
+			som.text = "Sound";
+			musica.text = "Music";
+		}
 	
 		if (StaticSettings.getMusicOn () == true) 
 		{

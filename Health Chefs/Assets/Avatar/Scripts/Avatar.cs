@@ -10,9 +10,18 @@ public class Avatar : MonoBehaviour {
 	public Button male;
 	public Button female;
 	private AvatarSelection avatar;
+	public Text genero;
+	public Text ethnicity;
 
 	void Start () 
 	{
+		if (StaticLanguage.getLanguage ().Equals ("portuguese")) {
+			genero.text = "Género";
+			ethnicity.text = "Etnia";
+		} else {
+			genero.text = "Gender";
+			ethnicity.text = "Ethnicity";
+		}
 		if (!System.IO.File.Exists(Application.persistentDataPath + "/avatar"))
 		{
 			avatar = new AvatarSelection ();

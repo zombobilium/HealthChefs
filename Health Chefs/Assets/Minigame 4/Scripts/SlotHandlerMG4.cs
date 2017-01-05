@@ -28,7 +28,6 @@ public class SlotHandlerMG4 : MonoBehaviour, IDropHandler {
 
 	public void Update()
 	{
-		string type = "";
 		if (slotChecked == StaticCheckGame.getRoundNumber()) {
 			if (StaticCheckGame.getGameEnded() == true) {
 				if (transform.name.Contains ("Fruit")) {

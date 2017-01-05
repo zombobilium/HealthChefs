@@ -136,17 +136,39 @@ public class Minigame3Controller : MonoBehaviour {
 		choice1.interactable = false;
 		choice2.interactable = false;
 		if (StaticLanguage.getLanguage ().Equals ("portuguese")) {
-			if (scoreNumber > sendToServer.minigame3Highscore)
-				gameEndMessage.text = "Acabou o tempo!\nFizeste " + scoreNumber + " pontos e bateste a tua antiga melhor pontuação.";
-			else
-				gameEndMessage.text = "Acabou o tempo!\nFizeste " + scoreNumber + " pontos mas não conseguiste bater a tua melhor pontuação.";
+			if (scoreNumber > sendToServer.minigame2Highscore) {
+				gameEndMessage.text = "Acabou o tempo!\nFizeste ";
+				if (scoreNumber != 1) {
+					gameEndMessage.text += scoreNumber + " pontos";
+				} else
+					gameEndMessage.text += scoreNumber + " ponto";
+				gameEndMessage.text += " e bateste a tua antiga melhor pontuação.";
+			} else {
+				gameEndMessage.text = "Acabou o tempo!\nFizeste ";
+				if (scoreNumber != 1) {
+					gameEndMessage.text += scoreNumber + " pontos";
+				} else
+					gameEndMessage.text += scoreNumber + " ponto";
+				gameEndMessage.text += " e não conseguiste bater a tua melhor pontuação.";
+			}
 		} 
 		else 
 		{
-			if (scoreNumber > sendToServer.minigame3Highscore)
-				gameEndMessage.text = "Time is up!\nYou got " + scoreNumber + " points and you were able to beat your previous highscore.";
-			else
-				gameEndMessage.text = "Time is up!\nYou got " + scoreNumber + " points but you were not able to beat your previous highscore.";
+			if (scoreNumber > sendToServer.minigame2Highscore) {
+				gameEndMessage.text = "Time is up!\nYou got ";
+				if (scoreNumber != 1) {
+					gameEndMessage.text += scoreNumber + " points";
+				} else
+					gameEndMessage.text += scoreNumber + " point";
+				gameEndMessage.text += " and you were able to beat your previous highscore.";
+			} else {
+				gameEndMessage.text = "Time is up!\nYou got ";
+				if (scoreNumber != 1) {
+					gameEndMessage.text += scoreNumber + " points";
+				} else
+					gameEndMessage.text += scoreNumber + " point";
+				gameEndMessage.text += " and you were not able to beat your previous highscore.";
+			}
 		}
 
 		if(scoreNumber > sendToServer.minigame3Highscore)

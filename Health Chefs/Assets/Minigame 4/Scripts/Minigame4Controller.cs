@@ -33,9 +33,27 @@ public class Minigame4Controller : MonoBehaviour {
 	public Text gameEndMessage;
 	public GameObject gameEndPanel;
 	public Text highscore2;
+	public Text legumesText;
+	public Text hidratosText;
+	public Text proteinaVText;
+	public Text proteinaAText;
+	public Text frutaText;
 
 	public void Start () 
 	{
+		if (StaticLanguage.getLanguage ().Equals ("portuguese")) {
+			legumesText.text = "Legumes e Verduras";
+			hidratosText.text = "Hidratos de Carbono";
+			proteinaVText.text = "Proteína Vegetal";
+			proteinaAText.text = "Proteína Animal";
+			frutaText.text = "Frutas";
+		} else {
+			legumesText.text = "Vegetables";
+			hidratosText.text = "Carbohydrates";
+			proteinaVText.text = "Vegetable Protein";
+			proteinaAText.text = "Animal Protein";
+			frutaText.text = "Fruits";
+		}
 		if (StaticMinigame3Controller.getReplay () == true)
 			instructionsPanel.SetActive (false);
 		StaticCheckGame.reset ();
@@ -101,9 +119,9 @@ public class Minigame4Controller : MonoBehaviour {
 		//inicia listas
 		fruit = new List<string> () { "ameixa_0", "ananas_0", "banana_0", "cereja_0", "kiwi_0", "laranja_0", "maca_0", "morango_0", "pera_0", "uva_0" };
 		legume = new List<string> () { "berinjela_1", "pepino_1", "beterraba_1", "brocolos_1", "cebola_1", "cenoura_1", "couve_1", "pimento_1", "rabanete_1", "tomate_1"};
-		hidrato = new List<string> () { "milho_2", "batata_2"};
-		proteinA = new List<string> () { "ovos_3"};
-		proteinV = new List<string> () { "ervilha_4"};
+		hidrato = new List<string> () { "arroz_2", "milho_2", "batata_2", "massa1_2", "massa2_2", "massa3_2", "massa_2", "pao1_2", "pao_2"};
+		proteinA = new List<string> () { "ovos_3", "bife_3", "camarao_3", "frango_3", "lombo_3", "peixe_3"};
+		proteinV = new List<string> () { "ervilha_4", "feijao1_4", "feijao2_4", "lentilhas_4", "grao_4"};
 
 		int randomFruit = Random.Range (0, fruit.Count);
 		int randomLegume = Random.Range (0, legume.Count);

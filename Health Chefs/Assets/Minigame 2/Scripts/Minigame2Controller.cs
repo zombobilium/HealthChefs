@@ -60,12 +60,12 @@ public class Minigame2Controller : MonoBehaviour {
 
 	public void setFoods()
 	{
-		proteins = new List<string> () { "meat_protein" };
-		lacts = new List<string> () { "cheese_lact" };
+		proteins = new List<string> () { "meat_protein", "bife_protein", "camarao_protein", "frango_protein", "lombo_protein", "peixe_protein" };
+		lacts = new List<string> () { "cheese_lact", "iogurte_lact", "manteiga_lact" };
 		vegetables = new List<string> () { "batata_vegetable", "beringela_vegetable", "beterraba_vegetable", "carrot_vegetable", "radish_vegetable" };
-		drinks = new List<string> () { "water_drink" };
+		drinks = new List<string> () { "water_drink", "kiwi_drink", "laranja_drink", "cenas_drink", "leite_drink" };
 		fruits = new List<string> () { "pera_fruit", "apple_fruit", "banana_fruit", "cherries_fruit" };
-		allFoods = new List<string> () { "meat_protein", "cheese_lact", "batata_vegetable", "water_drink", "pera_fruit", "apple_fruit", "banana_fruit", "beringela_vegetable", "beterraba_vegetable", "carrot_vegetable", "cherries_fruit", "radish_vegetable" }; 
+		allFoods = new List<string> () { "meat_protein", "cheese_lact", "batata_vegetable", "water_drink", "pera_fruit", "apple_fruit", "banana_fruit", "beringela_vegetable", "beterraba_vegetable", "carrot_vegetable", "cherries_fruit", "radish_vegetable", "bife_protein", "camarao_protein", "frango_protein", "lombo_protein", "peixe_protein", "kiwi_drink", "laranja_drink", "cenas_drink", "leite_drink", "iogurte_lact", "manteiga_lact" }; 
 
 		int randomProtein = Random.Range (0, proteins.Count);
 		int randomLact = Random.Range (0, lacts.Count);
@@ -138,7 +138,7 @@ public class Minigame2Controller : MonoBehaviour {
 	IEnumerator nextRound()
 	{
 		yield return new WaitForSeconds (0.5f);
-		Image[] temp = new Image[8];
+		Image[] temp = new Image[6];
 		fullFoodButtons.CopyTo (temp);
 		foodButtons = new List<Image> ();
 		for (int i = 0; i < temp.Length; i++) {

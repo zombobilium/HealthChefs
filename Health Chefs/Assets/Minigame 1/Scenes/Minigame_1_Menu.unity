@@ -1982,6 +1982,7 @@ GameObject:
   - 82: {fileID: 799543182}
   - 114: {fileID: 799543183}
   - 114: {fileID: 799543184}
+  - 114: {fileID: 799543185}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2155,6 +2156,18 @@ MonoBehaviour:
   head: {fileID: 1454526282}
   torso: {fileID: 780664017}
   legs: {fileID: 1899872382}
+--- !u!114 &799543185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799543177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab7821d531c49747a9941c82793abf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionsPanel: {fileID: 2124843130}
 --- !u!1 &811619647
 GameObject:
   m_ObjectHideFlags: 0

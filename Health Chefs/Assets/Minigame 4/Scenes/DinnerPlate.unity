@@ -1494,6 +1494,11 @@ MonoBehaviour:
   gameEndMessage: {fileID: 1954258076}
   gameEndPanel: {fileID: 411523068}
   highscore2: {fileID: 864090177}
+  legumesText: {fileID: 1689042593}
+  hidratosText: {fileID: 882840971}
+  proteinaVText: {fileID: 1452463359}
+  proteinaAText: {fileID: 1275271774}
+  frutaText: {fileID: 1760446051}
 --- !u!4 &609689972
 Transform:
   m_ObjectHideFlags: 0
@@ -2359,8 +2364,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -127, y: -114}
-  m_SizeDelta: {x: 146, y: 107.5}
+  m_AnchoredPosition: {x: -141.8, y: -107.75}
+  m_SizeDelta: {x: 225.2, y: 107.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882840971
 MonoBehaviour:
@@ -3690,8 +3695,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31, y: 53.75}
-  m_SizeDelta: {x: 146, y: 107.5}
+  m_AnchoredPosition: {x: -31, y: 32.2}
+  m_SizeDelta: {x: 164.1, y: 107.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689042593
 MonoBehaviour:

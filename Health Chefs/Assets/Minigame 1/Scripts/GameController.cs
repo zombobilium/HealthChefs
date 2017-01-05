@@ -177,4 +177,14 @@ public class GameController : MonoBehaviour {
 		} else
 			lostLives++;
 	}
+
+	public void setReplayTrue()
+	{
+		StaticMinigame3Controller.setReplay (true);
+	}
+
+	public void setReplayFalse()
+	{
+		StaticMinigame3Controller.setReplay (false);
+	}
 }

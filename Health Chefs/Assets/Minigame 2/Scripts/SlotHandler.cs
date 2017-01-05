@@ -32,24 +32,35 @@ public class SlotHandler : MonoBehaviour, IDropHandler {
 		string type = "";
 		if (slotChecked == StaticCheckGame.getRoundNumber()) {
 			if (StaticCheckGame.getGameEnded() == true) {
-				if (!transform.name.Contains ("Drinks")) {
+				if (transform.name.Contains ("Drinks")) {
 					for (int i = 0; i < transform.childCount; i++) {
-						if (transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("drink")) {
+						if (!transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("drink")) {
 							StaticCheckGame.setGameWinFalse ();
 							slotChecked++;
 							StaticCheckGame.incSlotsChecked ();
 							return;
 						}
 					}
-					if (transform.name.Contains ("Bottom")) {
-						for (int i = 0; i < transform.childCount; i++) {
-							if (!transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("vegetable")
-								&& !transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("fruit")) {
-								StaticCheckGame.setGameWinFalse ();
-								slotChecked++;
-								StaticCheckGame.incSlotsChecked ();
-								return;
-							}
+				}
+				if (transform.name.Contains ("Bottom")) {
+					for (int i = 0; i < transform.childCount; i++) {
+						if (!transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("vegetable")
+							&& !transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("fruit")) {
+							StaticCheckGame.setGameWinFalse ();
+							slotChecked++;
+							StaticCheckGame.incSlotsChecked ();
+							return;
+						}
+					}
+				}
+				if (transform.name.Contains ("Panel")) {
+					for (int i = 0; i < transform.childCount; i++) {
+						if (!transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("protein")
+							&& !transform.GetChild (i).gameObject.GetComponent<Image> ().sprite.name.Contains ("lact")) {
+							StaticCheckGame.setGameWinFalse ();
+							slotChecked++;
+							StaticCheckGame.incSlotsChecked ();
+							return;
 						}
 					}
 				}

@@ -37,7 +37,7 @@ public class AvatarSelection {
 		else
 			head++;
 
-		return Resources.Load ("Avatar/Heads/" + gender + "/" + skin + "/" + headImages [head], typeof(Sprite)) as Sprite;
+		return Resources.Load ("Avatar/Heads/" + gender + "/" + headSkin + "/" + headImages [head], typeof(Sprite)) as Sprite;
 	}
 
 	public Sprite selectHeadBefore()

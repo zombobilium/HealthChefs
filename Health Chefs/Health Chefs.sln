@@ -5,6 +5,8 @@ Project("{BEF31221-CE45-A603-10D4-D754686D7BED}") = "Health Chefs", "Assembly-CS
 EndProject
 Project("{BEF31221-CE45-A603-10D4-D754686D7BED}") = "Health Chefs", "Assembly-CSharp-Editor.csproj", "{98B8263E-227F-F774-6A19-3FF9F6D02499}"
 EndProject
+Project("{BEF31221-CE45-A603-10D4-D754686D7BED}") = "Health Chefs", "Assembly-UnityScript.unityproj", "{0CCE545B-E380-CB28-5CA1-618FA95D5005}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{98B8263E-227F-F774-6A19-3FF9F6D02499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B8263E-227F-F774-6A19-3FF9F6D02499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98B8263E-227F-F774-6A19-3FF9F6D02499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CCE545B-E380-CB28-5CA1-618FA95D5005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCE545B-E380-CB28-5CA1-618FA95D5005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCE545B-E380-CB28-5CA1-618FA95D5005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCE545B-E380-CB28-5CA1-618FA95D5005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

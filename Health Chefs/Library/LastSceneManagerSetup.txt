@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Minigame 2/Scenes/Fridge.unity
+- path: Assets/Avatar/Scenes/AvatarSelection.unity
   isLoaded: 1
   isActive: 1

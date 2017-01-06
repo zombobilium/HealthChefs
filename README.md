@@ -17,29 +17,37 @@ The website and webservices are prepared for a database with the following forma
 
 Schema: public;
 
-...Tables and their respective columns:
-...Admins   // This Admins table has the necessary login info for the website login page.
-	.* password;
-	.* salt;
-	.* idUser;
-	.* admin;
-	.* username;
-*Login   // This table identifies each login - if possible - as in each start of the application.
-	- idLogin
-	- idUser
-	- data 
+Tables and their respective columns:
 
-*MiniGame     // Stores all minigames info.
-	- idGame
-	- idUser
-	- gameName
-	- highScore
-	- timesPlayed
-	- description
+* Admins(This Admins table has the necessary login info for the website login page)
+	* password;
+	* salt;
+	* idUser;
+	* admin;
+	* username;
 
-*User    // A user ("device") is stored here
-	- idUser
-	- numberofhours
+
+
+
+
+
+
+* Login(This table identifies each login - if possible - as in each start of the application)
+	* idLogin
+	* idUser
+	* data 
+
+* MiniGame(Stores all minigames info)
+	* idGame
+	* idUser
+	* gameName
+	* highScore
+	* timesPlayed
+	* description
+
+* User(A user *device* is stored here)
+	* idUser
+	* numberofhours
 
 
 
